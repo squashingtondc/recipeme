@@ -36,7 +36,7 @@ function IngredientListViewModel() {
                 url += "&allowedIngredient[]=" + self.ingredients()[i].title();
             }
             $.support.cors = true;
-            $.getJSON(urlTest, {
+            $.getJSON(newUrl, {
                 dataType: 'jsonp',
                 xhrFields: {
                     withCredentials: true
