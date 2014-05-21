@@ -4,8 +4,6 @@
 <head>
 <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.0.0.js'></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-
 </head>
 
 <body bgcolor="white" text="blue">
@@ -29,9 +27,6 @@
 <form data-bind="submit: getRecipes">
     <button type="submit">RecipeMe</button>
 </form>
-
-You have <b data-bind="text: incompleteTasks().length">&nbsp;</b> incomplete task(s)
-<span data-bind="visible: incompleteTasks().length == 0"></span>
 
 <textarea name="ingredients" data-bind="value: ko.toJSON(ingredients)"></textarea>
 
