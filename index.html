@@ -8,10 +8,9 @@
 
 <body bgcolor="white" text="blue">
     
-<h3>RecipeMe</h3>
-
-    
-<h4>What's in your cupboard?</h4>
+<h2>RecipeMe</h3>
+<h3>What's in your cupboard?</h4>
+    <h4>RecipeMe gives you some simple, tasty recipes based</h4>
 
     <form data-bind="submit: addIngredient">Add ingredient:
         <input data-bind="value: newIngredientText" placeholder="What ingredient is available?" />
@@ -32,6 +31,11 @@
     </form>
     <!-- See the json -->
     <textarea name="recipes" data-bind="value: ko.toJSON(recipes)"></textarea>
+    <ul data-bind="foreach: recipes">
+        <li data-bind="text: title"></li>
+        <textarea name="recipeIngredients" data-bind="value: recipeIngredients, visible: recipeIngredients().length > 0">
+    </textarea>
+    </ul>
 </body>
 <script type='text/javascript' src='javascripts/recipeme.js'></script>
 </html>
