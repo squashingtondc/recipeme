@@ -8,10 +8,11 @@
 
 <body bgcolor="white" text="blue">
     
-<h2>RecipeMe</h3>
-<h3>What's in your cupboard?</h4>
+<h2>RecipeMe</h2>
+<h3>What's in your cupboard?</h3>
     <h4>RecipeMe gives you some simple, tasty recipes based on what you currently have in your pantry/freezer/refrigerator.  </h4>
-
+    
+    <h4>Add the ingredients that are available to you.</h4>
     <form data-bind="submit: addIngredient">Add ingredient:
         <input data-bind="value: newIngredientText" placeholder="What ingredient is available?" />
         <button type="submit">Add</button>
@@ -29,7 +30,7 @@
     <form data-bind="submit: mockUpRecipes">
         <button type="submit">RecipeMe</button>
     </form>
-    <!--Would eventually like to have a selectable list of ingredients here.  The user would then be able to uncheck any ingredients they do not have so that those recipes will be removed from the list. -->
+    <!--Would eventually like to have a comprehensive, selectable list of ingredients here.  The user would then be able to uncheck any ingredients they do not have so that those recipes will be removed from the list. -->
     <ul data-bind="foreach: recipes">
         <li data-bind="text: title"></li>
         Do you also have: 
