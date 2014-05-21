@@ -35,15 +35,8 @@ function IngredientListViewModel() {
             for (var i = 0; i < self.ingredients().length; i++) {
                 url += "&allowedIngredient[]=" + self.ingredients()[i].title();
             }
-            alert(url);
             $.support.cors = true;
-            $.getJSON(newUrl, {
-                //headers: { Access-Control-Allow-Origin: * },
-                headers: {
-                    "Content-Type": "application/json",
-                        "Accept": "application/json"
-                },
-                contentType: "application/json",
+            $.getJSON(urlTest, {
                 dataType: 'jsonp',
                 xhrFields: {
                     withCredentials: true
