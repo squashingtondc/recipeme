@@ -27,6 +27,13 @@ function IngredientListViewModel() {
     self.removeIngredient = function (ingredient) {
         self.ingredients.remove(ingredient);
     };
+    
+    self.clearAll = function () {
+        self.ingredients.clearAll();
+        self.recipes.clearAll();
+        self.allRecipeIngredients.clearAll();
+    };
+
 
     self.getRecipes = function () {
         // Currently not working due to issues with CORS
