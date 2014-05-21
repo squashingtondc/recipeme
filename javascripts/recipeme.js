@@ -71,6 +71,7 @@ function IngredientListViewModel() {
 
     self.mockUpRecipes = function () {
         self.recipes.removeAll();
+        self.allRecipeIngredients.removeAll();
         self.recipes.push(new Recipe({
             title: "Mac & Cheese",
             recipeIngredients: [
