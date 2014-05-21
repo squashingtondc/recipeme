@@ -41,10 +41,10 @@ function IngredientListViewModel() {
                 xhrFields: {
                     withCredentials: true
                 },
-                success: function (json) {
+                success: function (data, textStatus, jqXHR) {
                     // do stuff with json (in this case an array)
                     alert("Success");
-                    alert(json);
+                    alert(data);
                 },
                 error: function () {
                     alert("Error");
