@@ -14,6 +14,7 @@ function IngredientListViewModel() {
     self.ingredients = ko.observableArray([]);
     self.newIngredientText = ko.observable();
     self.recipes = ko.observableArray([]);
+    self.allRecipeIngredients = ko.observableArray([]);
 
     // Operations
     self.addIngredient = function () {
@@ -75,11 +76,17 @@ function IngredientListViewModel() {
             recipeIngredients: [
                 "pasta", "cheese", "milk"]
         }));
+        self.allRecipeIngredients.push("pasta");
+        self.allRecipeIngredients.push("cheese");
+        self.allRecipeIngredients.push("milk");
         self.recipes.push(new Recipe({
             title: "Pasta Con Queso",
             recipeIngredients: [
-                "pasta", "cheese", "milk"]
+                "pasta", "queso", "leche"]
         }));
+        self.allRecipeIngredients.push("pasta");
+        self.allRecipeIngredients.push("queso");
+        self.allRecipeIngredients.push("leche");
     };
 }
 
