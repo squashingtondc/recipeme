@@ -44,6 +44,8 @@ function IngredientListViewModel() {
                 success: function (data, textStatus, jqXHR) {
                     // do stuff with json (in this case an array)
                     alert("Success");
+                    alert("textStatus" + textStatus);
+                    alert("jqXHR" + jqXHR);
                     alert(data);
                 },
                 error: function () {
