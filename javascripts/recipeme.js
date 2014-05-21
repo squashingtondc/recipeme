@@ -1,4 +1,4 @@
-function Ingredient(data) {
+function Ingredient(data) { 
     this.title = ko.observable(data.title);
     this.includeInRecipe = ko.observable(data.includeInRecipe);
 }
