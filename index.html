@@ -33,6 +33,7 @@
     <form data-bind="submit: clearAll">
         <button type="submit">Clear</button>
     </form>
+    
     <!--Would eventually like to have a comprehensive, selectable list of ingredients here.  The user would then be able to uncheck any ingredients they do not have so that those recipes will be removed from the list. -->
     </br>
     <span data-bind="visible: allRecipeIngredients().length > 0">
@@ -40,14 +41,14 @@
         </br>
         <textarea name="allRecipeIngredients" data-bind="value: allRecipeIngredients"></textarea>
     </span>
-    <ul data-bind="foreach: recipes">
+    <ul data-bind="foreach: recipes, visible: recipes().length > 0">
         <li data-bind="text: title"></li>
         Do you also have: 
         <textarea name="recipeIngredients" data-bind="value: recipeIngredients, visible: recipeIngredients().length > 0">
-    </textarea>
-    <!--Placeholder link to Google. -->
-    <a href="https://www.google.com">RecipeMe!</a> 
-    </br>
+        </textarea>
+        <!--Placeholder link to Google. -->
+        <a href="https://www.google.com">RecipeMe!</a> 
+        </br>
     </ul>
 </body>
 <script type='text/javascript' src='javascripts/recipeme.js'></script>
