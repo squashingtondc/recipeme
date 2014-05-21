@@ -16,7 +16,7 @@ function IngredientListViewModel() {
 
     // Operations
     self.addIngredient = function () {
-        self.ingredients.push(new Ingredient({
+        self.ingredients.push(new Ingredient({ 
             title: this.newIngredientText(),
             includeInRecipe: true
         }));
