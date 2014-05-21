@@ -25,13 +25,13 @@ function IngredientListViewModel() {
         // Build the URL for Yummly
         var appId = '246a2dfe';
         var appKey = '575d5e01b0e7c25ab538e27743dc15db'
-        var url = 'http://api.yummly.com/v1/api/recipes?_app_id=' + appId + '&_app_key='+ appKey;
+        var url = 'http://api.yummly.com/v1/api/recipes?callback=?_app_id=' + appId + '&_app_key='+ appKey;
         
         //Food2Fork Test URL
         //var f2fURL = "http://food2fork.com/api/search?key=b49f1a7e472550dd4fa5d08d735db081&q=shredded%20chicken";
         
         //Test URL
-        var urlTest = "http://api.yummly.com/v1/api/recipes?_app_id=246a2dfe&_app_key=575d5e01b0e7c25ab538e27743dc15db&q=onion+soup&callback=?";
+        var urlTest = "http://api.yummly.com/v1/api/recipes?callback=?_app_id=246a2dfe&_app_key=575d5e01b0e7c25ab538e27743dc15db&q=onion+soup";
 
         if (self.ingredients().length > 0) {
             for (var i = 0; i < self.ingredients().length; i++) {
