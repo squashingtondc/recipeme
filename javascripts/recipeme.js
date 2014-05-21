@@ -1,6 +1,11 @@
-function Ingredient(data) { 
+function Ingredient(data) {
     this.title = ko.observable(data.title);
     this.includeInRecipe = ko.observable(data.includeInRecipe);
+}
+
+function Recipe(data) {
+    this.title = ko.observable(data.title);
+    this.recipeIngredients = ko.observableArray(data.recipeIngredients);
 }
 
 function IngredientListViewModel() {
@@ -8,10 +13,11 @@ function IngredientListViewModel() {
     var self = this;
     self.ingredients = ko.observableArray([]);
     self.newIngredientText = ko.observable();
+    self.recipes = ko.observableArray([]);
 
     // Operations
     self.addIngredient = function () {
-        self.ingredients.push(new Ingredient({ 
+        self.ingredients.push(new Ingredient({
             title: this.newIngredientText(),
             includeInRecipe: true
         }));
@@ -22,14 +28,15 @@ function IngredientListViewModel() {
     };
 
     self.getRecipes = function () {
+        // Currently not working due to issues with CORS
         // Build the URL for Yummly
         var appId = '246a2dfe';
-        var appKey = '575d5e01b0e7c25ab538e27743dc15db'
-        var url = 'http://api.yummly.com/v1/api/recipes?callback=?_app_id=' + appId + '&_app_key='+ appKey;
-        
+        var appKey = '575d5e01b0e7c25ab538e27743dc15db';
+        var url = 'http://api.yummly.com/v1/api/recipes?callback=?_app_id=' + appId + '&_app_key=' + appKey;
+
         //Food2Fork Test URL
         //var f2fURL = "http://food2fork.com/api/search?key=b49f1a7e472550dd4fa5d08d735db081&q=shredded%20chicken";
-        
+
         //Test URL
         var urlTest = "http://api.yummly.com/v1/api/recipes?callback=?_app_id=246a2dfe&_app_key=575d5e01b0e7c25ab538e27743dc15db&q=onion+soup";
 
@@ -38,6 +45,7 @@ function IngredientListViewModel() {
                 url += "&allowedIngredient[]=" + self.ingredients()[i].title();
             }
             $.support.cors = true;
+
             $.getJSON(urlTest, {
                 dataType: 'jsonp',
                 jsonpCallback: 'myCallback',
@@ -58,6 +66,19 @@ function IngredientListViewModel() {
         } else {
             alert("Please enter at least one ingredient.");
         }
+    };
+
+    self.mockUpRecipes = function () {
+        self.recipes.push(new Recipe({
+            title: "Mac & Cheese",
+            recipeIngredients: [
+                "pasta", "cheese", "milk"]
+        }));
+        self.recipes.push(new Recipe({
+            title: "Pasta Con Queso",
+            recipeIngredients: [
+                "pasta", "cheese", "milk"]
+        }));
     };
 }
 
