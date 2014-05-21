@@ -20,7 +20,7 @@
     <li>
         <input type="checkbox" data-bind="checked: includeInRecipe" />
         <input data-bind="value: title, enable: includeInRecipe" />
-        <a href="#" data-bind="click: $parent.removeTask">Delete</a>
+        <a href="#" data-bind="click: $parent.removeIngredient">Delete</a>
     </li>
 </ul>
 
@@ -28,6 +28,7 @@
     <button type="submit">RecipeMe</button>
 </form>
 
+<!-- See the json -->
 <textarea name="ingredients" data-bind="value: ko.toJSON(ingredients)"></textarea>
 
 </body>
