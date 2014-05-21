@@ -30,6 +30,9 @@
     <form data-bind="submit: mockUpRecipes">
         <button type="submit">Recipes, Please!</button>
     </form>
+    <form data-bind="submit: clearAll">
+        <button type="submit">Clear</button>
+    </form>
     <!--Would eventually like to have a comprehensive, selectable list of ingredients here.  The user would then be able to uncheck any ingredients they do not have so that those recipes will be removed from the list. -->
     </br>
     <span data-bind="visible: allRecipeIngredients().length > 0">
