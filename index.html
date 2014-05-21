@@ -31,8 +31,10 @@
         <button type="submit">Recipes, Please!</button>
     </form>
     <!--Would eventually like to have a comprehensive, selectable list of ingredients here.  The user would then be able to uncheck any ingredients they do not have so that those recipes will be removed from the list. -->
-    All Ingredients
-    <textarea name="allRecipeIngredients" data-bind="value: allRecipeIngredients, visible: allRecipeIngredients().length > 0"></textarea>
+    <span data-bind="visible: allRecipeIngredients().length > 0">
+        Remove the ingredients not available in order to update the list of recipes.
+        <textarea name="allRecipeIngredients" data-bind="value: allRecipeIngredients, visible: allRecipeIngredients().length > 0"></textarea>
+    </span>
     <ul data-bind="foreach: recipes">
         <li data-bind="text: title"></li>
         Do you also have: 
