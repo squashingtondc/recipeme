@@ -69,6 +69,7 @@ function IngredientListViewModel() {
     };
 
     self.mockUpRecipes = function () {
+        self.recipes.removeAll();
         self.recipes.push(new Recipe({
             title: "Mac & Cheese",
             recipeIngredients: [
