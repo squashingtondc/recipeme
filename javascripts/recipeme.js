@@ -29,9 +29,9 @@ function IngredientListViewModel() {
     };
     
     self.clearAll = function () {
-        self.ingredients.clearAll();
-        self.recipes.clearAll();
-        self.allRecipeIngredients.clearAll();
+        self.ingredients.removeAll();
+        self.recipes.removeAll();
+        self.allRecipeIngredients.removeAll();
     };
 
 
