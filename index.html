@@ -8,7 +8,7 @@
 
 <body bgcolor="white" text="blue">
     
-<h2>RecipeMe</h2>
+<h2>RecipeMe!</h2>
 <h3>What's in your cupboard?</h3>
     <h4>RecipeMe gives you some simple, tasty recipes based on what you currently have in your pantry/freezer/refrigerator.  </h4>
     
@@ -28,7 +28,7 @@
     <form data-bind="submit: getRecipes">
     -->
     <form data-bind="submit: mockUpRecipes">
-        <button type="submit">RecipeMe</button>
+        <button type="submit">Recipes, Please!</button>
     </form>
     <!--Would eventually like to have a comprehensive, selectable list of ingredients here.  The user would then be able to uncheck any ingredients they do not have so that those recipes will be removed from the list. -->
     <ul data-bind="foreach: recipes">
@@ -36,6 +36,8 @@
         Do you also have: 
         <textarea name="recipeIngredients" data-bind="value: recipeIngredients, visible: recipeIngredients().length > 0">
     </textarea>
+    <!--Placeholder link to Google. -->
+    <a href="https://www.google.com">RecipeMe!</a> 
     </ul>
 </body>
 <script type='text/javascript' src='javascripts/recipeme.js'></script>
