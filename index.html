@@ -7,30 +7,31 @@
 </head>
 
 <body bgcolor="white" text="blue">
-
+    
 <h3>RecipeMe</h3>
+
+    
 <h4>What's in your cupboard?</h4>
-<form data-bind="submit: addIngredient">
-    Add ingredient: <input data-bind="value: newIngredientText" 
-                           placeholder="What ingredient is available?" />
-    <button type="submit">Add</button>
-</form>
 
-<ul data-bind="foreach: ingredients, visible: ingredients().length > 0">
-    <li>
-        <input type="checkbox" data-bind="checked: includeInRecipe" />
-        <input data-bind="value: title, enable: includeInRecipe" />
-        <a href="#" data-bind="click: $parent.removeIngredient">Delete</a>
-    </li>
-</ul>
+    <form data-bind="submit: addIngredient">Add ingredient:
+        <input data-bind="value: newIngredientText" placeholder="What ingredient is available?" />
+        <button type="submit">Add</button>
+    </form>
+    <ul data-bind="foreach: ingredients, visible: ingredients().length > 0">
+        <li>
+            <input type="checkbox" data-bind="checked: includeInRecipe" />
+            <input data-bind="value: title, enable: includeInRecipe" /> <a href="#" data-bind="click: $parent.removeIngredient">Delete</a>
 
-<form data-bind="submit: getRecipes">
-    <button type="submit">RecipeMe</button>
-</form>
-
-<!-- See the json -->
-<textarea name="ingredients" data-bind="value: ko.toJSON(ingredients)"></textarea>
-
+        </li>
+    </ul>
+    <!-- 
+    <form data-bind="submit: mockUpRecipes">
+    -->
+    <form data-bind="submit: getRecipes">
+        <button type="submit">RecipeMe</button>
+    </form>
+    <!-- See the json -->
+    <textarea name="recipes" data-bind="value: ko.toJSON(recipes)"></textarea>
 </body>
 <script type='text/javascript' src='javascripts/recipeme.js'></script>
 </html>
