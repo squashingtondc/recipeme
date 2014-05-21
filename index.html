@@ -10,7 +10,7 @@
     
 <h2>RecipeMe</h3>
 <h3>What's in your cupboard?</h4>
-    <h4>RecipeMe gives you some simple, tasty recipes based</h4>
+    <h4>RecipeMe gives you some simple, tasty recipes based on what you currently have in your pantry/freezer/refrigerator.  </h4>
 
     <form data-bind="submit: addIngredient">Add ingredient:
         <input data-bind="value: newIngredientText" placeholder="What ingredient is available?" />
@@ -29,10 +29,10 @@
     <form data-bind="submit: mockUpRecipes">
         <button type="submit">RecipeMe</button>
     </form>
-    <!-- See the json -->
-    <textarea name="recipes" data-bind="value: ko.toJSON(recipes)"></textarea>
+    <!--Would eventually like to have a selectable list of ingredients here.  The user would then be able to uncheck any ingredients they do not have so that those recipes will be removed from the list. -->
     <ul data-bind="foreach: recipes">
         <li data-bind="text: title"></li>
+        Do you also have: 
         <textarea name="recipeIngredients" data-bind="value: recipeIngredients, visible: recipeIngredients().length > 0">
     </textarea>
     </ul>
